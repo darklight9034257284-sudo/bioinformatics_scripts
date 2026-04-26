@@ -1,71 +1,74 @@
-# PCA on Gene Expression Data (Breast Cancer)
+PCA on Gene Expression Data
+🧬 Overview
+In this project, we explore how Principal Component Analysis (PCA) can help us understand patterns in gene expression data, specifically for breast cancer patients.
 
-## Introduction
+Instead of just looking at thousands of genes individually, PCA helps reduce the complexity and lets us visualize meaningful patterns in a simpler way.
 
-Principal Component Analysis (PCA) is a dimensionality reduction technique used to simplify high-dimensional data while preserving important patterns. In bioinformatics, PCA helps identify patterns in gene expression data.
+🎯 Objective
+The main goals of this project were:
 
-## Objective
+Extract expression levels of two important genes: XBP1 and GATA3
 
-To analyze gene expression data of breast cancer patients and:
+Visualize their relationship using a scatter plot
 
-* Visualize expression of XBP1 and GATA3 genes
-* Observe separation between ER+ and ER- cancer types
-* Apply PCA and project the data onto the first principal component (PC1)
+Apply PCA to reduce dimensions
 
-## Dataset
+Project the data onto the first principal component (PC1)
 
-* GEO ID: GSE5325
-* 105 patient samples
-* Gene expression values for thousands of genes
-* Labels:
+📁 Dataset
+We used gene expression data from 105 patients, organized into:
 
-  * 1 → ER+ breast cancer
-  * 0 → ER- breast cancer
+class.tsv → Labels (ER+ or ER-)
 
-## Methodology
+filtered.tsv.gz → Gene expression values
 
-### 1. Data Loading
+columns.tsv.gz → Mapping of gene IDs to gene names
 
-* Loaded gene expression dataset
-* Cleaned column names to remove extra spaces
+⚙️ What I Did
+1. Data Processing
+Loaded all datasets using Python
 
-### 2. Gene Selection
+Identified the gene IDs for XBP1 and GATA3
 
-* Extracted expression values for:
+Extracted their expression values for all patients
 
-  * XBP1 (Gene ID: 4404)
-  * GATA3 (Gene ID: 2625)
+2. Visualization
+Created a scatter plot of XBP1 vs GATA3
 
-### 3. Visualization (Figure 1a)
+Colored points based on cancer type (ER+ / ER-)
 
-* Scatter plot created:
+👉 This helps visually see if the two groups separate
 
-  * X-axis → GATA3
-  * Y-axis → XBP1
-* Colored by class:
+3. PCA Implementation
+Applied PCA on the dataset
 
-  * Red → ER+
-  * Blue → ER-
+Reduced high-dimensional data to 1 principal component (PC1)
 
-### 4. PCA (Figure 1c)
+Projected samples onto PC1
 
-* Applied PCA on full dataset
-* Reduced data to 1 dimension (PC1)
-* Plotted projection of all samples
+👉 This shows how well PCA separates the classes
 
-## Results
+📊 Results
+The scatter plot shows a clear pattern between the two gene expressions
 
-* Scatter plot shows partial separation between ER+ and ER- samples
-* PCA projection preserves this separation in reduced dimension
-* Confirms that gene expression patterns can distinguish cancer types
+PCA projection highlights separation between ER+ and ER- samples
 
-## Conclusion
+Even though data is high-dimensional, PCA captures important variation effectively
 
-PCA effectively reduces dimensionality while retaining meaningful biological patterns. Gene expression analysis using PCA can help classify disease subtypes.
+🛠️ Tools Used
+Python
 
-## Tools Used
+Pandas
 
-* Python
-* Pandas
-* Matplotlib
-* Scikit-learn
+NumPy
+
+Matplotlib
+
+Scikit-learn
+
+🧠 Key Learning
+PCA is powerful for dimensionality reduction
+
+Gene expression data can reveal patterns when visualized properly
+
+Even simple plots can give meaningful biological insights
