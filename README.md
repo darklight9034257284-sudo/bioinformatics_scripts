@@ -56,23 +56,39 @@ PCA projection highlights separation between ER+ and ER- samples
 
 Even though data is high-dimensional, PCA captures important variation effectively
 
-🛠️ Tools Used
-Python
-
-Pandas
-
-NumPy
-
-Matplotlib
-
-Scikit-learn
-
-🧠 Key Learning
-PCA is powerful for dimensionality reduction
-
-Gene expression data can reveal patterns when visualized properly
-
-Even simple plots can give meaningful biological insights
-=======
 # PCA-project
->>>>>>> 7db334e9e682adfd43bdc6f89c1ecad2fa11658d
+
+PCA on gene expression data.
+
+Overview
+--------
+
+This repository contains code and data for running principal component analysis (PCA)
+on a small gene expression dataset. The goal is to demonstrate dimensionality reduction
+and basic visualizations (scatter plots, PCA projections).
+
+Data
+----
+
+Place your input files in the `data/` directory. Expected files (example names used in the
+project code):
+
+- `class.tsv` — sample labels
+- `filtered.tsv.gz` — gene expression matrix
+- `columns.tsv.gz` — gene ID/name mapping (optional)
+
+Usage
+-----
+
+Run the analysis script with Python 3. Requirements: pandas, numpy, matplotlib, scikit-learn.
+
+Example:
+
+	python3 pca_project.py
+
+License
+-------
+
+This project contains data and code provided for analysis. Remove or replace any
+personal or identifying information before sharing publicly.
+
